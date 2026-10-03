@@ -346,17 +346,3 @@ Usá `--prompt "APAPED, ISFD, Tecnicatura Superior en Desarrollo de Software"`.
 
 **Interfaz gráfica no abre en Linux**
 Falta `python3-tk` (ver sección 1.4).
-
----
-
-## 9. Comparación con el script original
-
-`v2txt.py` se conserva sin modificar como referencia. El proyecto nuevo suma:
-
-- Librería reutilizable, con las dos interfaces separadas.
-- Elección de modelo, dispositivo, idioma y formato de salida.
-- Subtítulos SRT/VTT y salida JSON con marcas de tiempo.
-- Filtro de silencios (VAD) y timestamps por palabra.
-- Callback de progreso y cancelación segura desde la GUI.
-- Reutilización del modelo cargado entre archivos.
-- Errores claros en vez de tracebacks.
