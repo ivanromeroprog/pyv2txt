@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transcriptor-audio"
+version = "1.0.0"
+description = "Transcripción local de audio con faster-whisper, con interfaz de consola y gráfica."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "faster-whisper>=1.0.0,<2.0.0",
+    "ctranslate2>=4.0.0",
+    "av>=11.0.0",
+    "onnxruntime>=1.17.0",
+    "tokenizers>=0.13.0",
+    "huggingface-hub>=0.20.0",
+    "numpy>=1.24.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5.0"]
+
+[project.scripts]
+transcribir = "consola:main"
+
+[tool.setuptools]
+py-modules = ["consola", "interfaz"]
+
+[tool.setuptools.packages.find]
+include = ["transcriptor*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]

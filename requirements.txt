@@ -1,0 +1,29 @@
+# Requerimientos del proyecto Transcriptor de audio (Whisper)
+#
+# Instalación:
+#   pip install -r requirements.txt
+#
+# Nota sobre la GPU (opcional): para usar CUDA hace falta además una
+# instalación de CUDA Toolkit + cuDNN (ver README.md, sección "GPU opcional").
+
+# Núcleo de la transcripción
+faster-whisper>=1.0.0,<2.0.0
+
+# Dependencias que faster-whisper arrastra y que conviene fijar de forma
+# explícita para evitar incompatibilidades conocidas:
+ctranslate2>=4.0.0        # motor de inferencia (CUDA / CPU)
+av>=11.0.0                # decodificación de audio y video
+onnxruntime>=1.17.0       # ONNX runtime, usado en CPU por defecto
+tokenizers>=0.13.0        # tokenización de Whisper
+huggingface-hub>=0.20.0   # descarga de los pesos del modelo
+numpy>=1.24.0
+tqdm>=4.66.0
+setuptools>=69.0
+
+# ---------------------------------------------------------------------------
+# La interfaz gráfica usa tkinter, que viene incluido con Python en Windows
+# y macOS. En Linux puede necesitar instalarse aparte:
+#   Debian/Ubuntu: sudo apt install python3-tk
+#   Fedora:        sudo dnf install python3-tkinter
+#   Arch:          sudo pacman -S tk
+# ---------------------------------------------------------------------------
